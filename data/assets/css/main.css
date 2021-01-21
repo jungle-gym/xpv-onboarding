@@ -1,20 +1,20 @@
-body {
+/* body {
     overflow-x: hidden;
-  }
+  } */
   
-  *, :before, :after {
+  /* *, :before, :after {
     margin: 0;
     padding: 0;
     position: relative;
     box-sizing: border-box;
-  }
+  } */
   
-  input, select, button, textarea {
+  /* input, select, button, textarea {
     -webkit-appearance: none;
             appearance: none;
     font: inherit;
     color: inherit;
-  }
+  } */
   
   .butt, .input {
     padding: .75rem;
@@ -127,7 +127,7 @@ body {
     padding: .375rem;
   }
   
-  html {
+  /* html {
     font: 100%/1.5 "Roboto", Verdana, sans-serif;
     color: #3d464d;
     background-color: #fff;
@@ -136,25 +136,25 @@ body {
     overflow: hidden-x;
     text-align: center;
   }
-  
+   */
   @media (min-width: 650px) {
     html {
       height: 100%;
     }
   
-    html:before {
+    /* html:before {
       content: '';
       display: inline-block;
       height: 100%;
       vertical-align: middle;
       margin-right: -0.25em;
     }
-  
-    body {
+   */
+    /* body {
       display: inline-block;
       vertical-align: middle;
       max-width: 38rem;
-    }
+    } */
   }
   
   .onboard-header {
