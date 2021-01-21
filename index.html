@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="data/assets/css/osfont-icon.css">
+    <link rel="stylesheet" href="data/assets/css/onboard.css">
+    <link rel="stylesheet" href="data/assets/css/main.css">
+</head>
+
+<body>
+    <div class="onboard-modal modal fade animated show-on-load">
+        <div class="modal-dialog modal-centered">
+            <div class="modal-content text-center">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span class="close-label">Skip Intro</span>
+                    <span class="os-icon os-icon-close"></span>
+                </button>
+                <div class="onboard-slider-container">
+                    <div class="onboard-slide">
+                        <div class="content">
+                            <h4 class="onboard-title">
+                                Welcome to My Jungle Gym configurator!
+                            </h4>
+                            <div class="onboard-text">
+                                With this configurator, you can create the perfect climbing frame for your backyard.
+                                <br><br><span class="Step-1">Step 1: Choose your base tower & roof
+                                    type.</strong></span></span>
+                            </div>
+                            <br>
+                            <div class="onboard-media">
+                                <br><img alt="" src="./data/assets/img/step1.gif" width="80%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="onboard-slide">
+                        <div class="content">
+                            <h4 class="onboard-title">
+                                Step 2: Add your favourite swing on the available sides
+                            </h4>
+                            <div class="onboard-media">
+                                <br><img alt="" src="./data/assets/img/step2.gif" width="80%">
+                                <div class="onboard-text">
+                                    <br>Note: If the distance between the slide and swing is too short, then you can
+                                    only pick the monkey swing accessory.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="onboard-slide">
+                        <div class="content">
+                            <h4 class="onboard-title">
+                                Step 3: Choose your slide and accessories
+                            </h4>
+
+                            <div class="onboard-media">
+                                <br><img alt="" src="./data/assets/img/step3.png" width="80%">
+                            </div>
+                            <div class="onboard-text"><br>
+                                Tip: Don’t forget to rotate and zoom in/out, to view your design from all angles.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <header class="onboard-header ci" style="text-align: center;">
+        <div class="wrap">
+            <span style="display: block;">
+                <h1 class="onboard-titre mega" id="typed"></h1>
+            </span>
+
+        </div>
+    </header> -->
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        var selectedScheme = 'onboard-straight-line background-blue';
+        $('.content').addClass(selectedScheme);
+        /**
+            Typed.js
+        */
+        // var typed = new Typed('#typed', {
+        //     strings: ['Onboard.css'],
+        //     typeSpeed: 90,
+        //     loop: false
+        // });
+        $('select').change(function () {
+            $('.content').removeClass(selectedScheme).addClass($(this).val());
+            selectedScheme = $(this).val();
+            switch (selectedScheme) {
+                case 'onboard-straight-line background-gray-dark':
+                case 'onboard-straight-line background-indigo':
+                case 'onboard-straight-line background-purple':
+                case 'onboard-straight-line background-danger':
+                case 'onboard-straight-line background-pink':
+                case 'onboard-slice-right background-gray-dark':
+                case 'onboard-slice-right background-indigo':
+                case 'onboard-slice-right background-purple':
+                case 'onboard-slice-right background-danger':
+                case 'onboard-slice-right background-pink':
+                case 'onboard-slice-left background-gray-dark':
+                case 'onboard-slice-left background-indigo':
+                case 'onboard-slice-left background-purple':
+                case 'onboard-slice-left background-danger':
+                case 'onboard-slice-left background-pink':
+                case 'onboard-curve-left background-gray-dark':
+                case 'onboard-curve-left background-indigo':
+                case 'onboard-curve-left background-purple':
+                case 'onboard-curve-left background-danger':
+                case 'onboard-curve-left background-pink':
+                case 'onboard-curve-right background-gray-dark':
+                case 'onboard-curve-right background-indigo':
+                case 'onboard-curve-right background-purple':
+                case 'onboard-curve-right background-danger':
+                case 'onboard-curve-right background-pink':
+                    $('.onboard-title').addClass('text-light');
+                    $('.onboard-text').addClass('text-light');
+                    break;
+                default:
+                    $('.onboard-title').removeClass('text-light');
+                    $('.onboard-text').removeClass('text-light');
+            }
+            onboardIt();
+        });
+
+
+        $('#onboardButton').on('click', function (e) {
+            e.preventDefault();
+            onboardIt();
+        })
+
+
+        $(document).ready(function () {
+            onboardIt();
+        });
+
+
+        function onboardIt() {
+            $('.onboard-modal.show-on-load').modal('show');
+            if ($('.onboard-modal .onboard-slider-container').length) {
+                $('.onboard-modal .onboard-slider-container').slick({
+                    dots: true,
+                    infinite: false,
+                    adaptiveHeight: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                });
+                $('.onboard-modal').on('shown.bs.modal', function (e) {
+                    $('.onboard-modal .onboard-slider-container').slick('setPosition');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
